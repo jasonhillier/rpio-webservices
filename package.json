@@ -1,6 +1,6 @@
 {
   "name": "rpio-webservices",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Raspberry Pi GPIO and SPI webservice endpoints",
   "main": "source/webservice.js",
   "scripts": {

@@ -101,8 +101,8 @@ class RPIO
         if (!this._Channels[pSensor.sensorId])
         {
             //open a channel
-            libGPIO.open(pSensor.pin, rpio.INPUT); //TODO: error handling
-            this._Channels[pSensor.sensorId] = {pin: pSensor.pin, mode: rpio.INPUT};
+            libGPIO.open(pSensor.pin, libGPIO.INPUT); //TODO: error handling
+            this._Channels[pSensor.sensorId] = {pin: pSensor.pin, mode: libGPIO.INPUT};
         }
 
         //read data from pin
