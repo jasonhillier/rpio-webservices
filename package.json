@@ -1,0 +1,44 @@
+{
+  "name": "rpio-webservices",
+  "version": "1.0.0",
+  "description": "Raspberry Pi GPIO and SPI webservice endpoints",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/_mocha -u tdd -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonhillier/rpio-webservices.git"
+  },
+  "keywords": [
+    "spi",
+    "mcp3008",
+    "rpi",
+    "raspberry",
+    "pi",
+    "gpio",
+    "webservice",
+    "restify",
+    "restful",
+    "orator",
+    "fable"
+  ],
+  "author": "Jason Hillier <jason@hillier.us>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonhillier/rpio-webservices/issues"
+  },
+  "homepage": "https://github.com/jasonhillier/rpio-webservices#readme",
+  "dependencies": {
+    "async": "^2.1.1",
+    "fable": "^1.0.1",
+    "mcp3008.js": "^0.4.0",
+    "rpio": "^0.9.12"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "orator": "^1.0.18",
+    "supertest": "^2.0.0"
+  }
+}

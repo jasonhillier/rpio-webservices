@@ -1,0 +1,19 @@
+{
+    "APIServerPort": 8080,
+    
+    "Sensors":
+    {
+        "red-button":
+        {
+            "displayName": "The big red button",
+            "type": "pseudo",
+            "range": "bool"
+        },
+        "temperature":
+        {
+            "displayName": "A temperature sensor",
+            "type": "pseudo",
+            "range": [-20, 120]
+        }
+    }
+}
