@@ -23,6 +23,8 @@ class RPIOWebService
 
     connectRoutes(pRestServer)
     {
+        this._Log.trace('Connecting routes for RPIOWebServices...');
+
         pRestServer.get('/Sensors', this.getSensorDetails.bind(this));
         pRestServer.get('/Sensor/:SensorID/Value', this.getSensorValue.bind(this));
 
