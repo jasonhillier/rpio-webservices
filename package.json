@@ -1,8 +1,8 @@
 {
   "name": "rpio-webservices",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Raspberry Pi GPIO and SPI webservice endpoints",
-  "main": "index.js",
+  "main": "source/webservice.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/_mocha -u tdd -R spec"
   },
