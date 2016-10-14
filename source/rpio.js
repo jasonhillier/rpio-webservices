@@ -9,11 +9,13 @@
 
 let libGPIO = null;
 let libMcp3008 = null;
+let _ADC = null;
 
 try
 {
     libGPIO = require('rpio');
     libMcp3008 = require('mcp3008.js');
+    _ADC = new libMcp3008();
 }
 catch(ex)
 {
@@ -119,8 +121,10 @@ class RPIO
 
         //TODO: sensor calibration methods
 
-        //TODO: SPI configuration
-        return fCallback(null, 0);
+        _ADC.read(pSensor.channel, function(value)
+        {
+            return fCallback(null, value);
+        });
     }
 }
 
