@@ -45,6 +45,7 @@ class RPIOWebService
     //Read current value of sensor
     getSensorValue(pRequest, pResponse, fCallback)
     {
+        var self = this;
         if (!pRequest.params.SensorID)
         {
             pResponse.send({Error: 'Invalid sensor ID!'});
@@ -53,11 +54,21 @@ class RPIOWebService
         }
         else
         {
-            this._RPIOSensors.read(pRequest.params.SensorID, function(pError, pValue)
+            self._RPIOSensors.read(pRequest.params.SensorID, function(pError, pValue)
             {
-                pResponse.send({Value: pValue});
-                pResponse.end();
-                return fCallback();
+                if (pError)
+                {
+                    self._Log.error(pError);
+                    pResponse.send({Error: pError});
+                    pResponse.end();
+                    return fCallback();
+                }
+                else
+                {
+                    pResponse.send({Value: pValue});
+                    pResponse.end();
+                    return fCallback();
+                }
             });
         }
     }

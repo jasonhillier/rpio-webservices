@@ -66,8 +66,6 @@ class RPIO
         let tmpSensor = this._Sensors[pSensorId];
         if (!tmpSensor)
             return fCallback('Sensor not found!');
-        if (!tmpSensor.range)
-            return fCallback('Sensor missing range definition!');
 
         tmpSensor.sensorId = pSensorId;
 
@@ -77,6 +75,8 @@ class RPIO
     //Handler for 'pseudo' sensor.  Useful for testing away from Raspberry Pi
     _read_pseudo(pSensor, fCallback)
     {
+        if (!pSensor.range)
+            return fCallback('Sensor missing range definition!');
         let min = 0, max = 1;
 
         if (Array.isArray(pSensor.range) &&
@@ -116,7 +116,7 @@ class RPIO
     //Handler for analog sensor attached to mcp3008 via SPI
     _read_mcp3008(pSensor, fCallback)
     {
-        if (!pSensor.channel)
+        if (!pSensor.channel && pSensor.channel !== 0)
             return fCallback('Sensor missing Mcp3008 channel definition!');
 
         //TODO: sensor calibration methods
